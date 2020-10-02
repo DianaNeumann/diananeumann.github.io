@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C010R5 demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<style>
+    *{
+        box-sizing: border-box;
+    }
+
+    body,html{
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .wrapper{
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+
+    .col1{
+        flex: 0 0 200px;
+        background-color: lightgray;
+        transition: background-color 0.2s linear;
+    }
+
+    .col2{
+        flex: 1;
+        background-color: papayawhip;
+        transition: background-color 0.2s linear;
+    }
+
+    .col1:before{
+        content: 'not spanning';
+    }
+
+    .col2:before{
+        content: 'not spanning';
+    }
+
+@media (screen-spanning: single-fold-vertical){
+    .col1{
+        flex: 0 0 env(fold-left);
+        margin-right: env(fold-width);
+    }
+
+    .col1:before{
+        content: "screen-spanning single-fold-vertical";
+    }
+
+    .col2:before {
+          content: "screen-spanning single-fold-vertical";
+        }
+}
+
+@media (screen-spanning: single-fold-horizontal){
+    .wrapper{
+        flex-direction: column;
+    }
+
+    .col1{
+        flex: 0 0 env(fold-top);
+        margin-bottom: env(fold-height);
+    }
+
+    .col1:before {
+          content: "screen-spanning single-fold-horizontal";
+    }
+        .col2:before {
+          content: "screen-spanning single-fold-horizontal";
+    }
+}
+
+@media (screen-spanning: none){
+    .col1:before {
+          content: "screen-spanning:none";
+    }
+
+        .col2:before {
+          content: "screen-spanning:none";
+    }
+}
+</style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="col1"></div>
+        <div class="col2"></div>
+    </div>
+</body>
+</html>
