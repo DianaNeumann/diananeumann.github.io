@@ -1,0 +1,116 @@
+body{
+    width:  100vw;
+    height: 100vh;
+    background: #F6F8FA;
+    overflow: hidden;
+
+}
+
+.blinky{
+    height: 100px;
+    width: 100px;
+    background-color:#F00708;
+    text-align: center;
+    
+}
+
+.pinky{
+    height: 100px;
+    width: 100px;
+    background-color: #FF9899;
+    text-align: center;
+}
+
+.inky{
+    height: 100px;
+    width: 100px;
+    background-color:#67FDFF;
+    text-align: center;
+}
+
+.clyde{
+    height: 100px;
+    width: 100px;
+    background-color: #F99C01;
+    text-align: center;
+
+}
+
+
+/* ####################-_-########################### */
+
+@media (screen-spanning: single-fold-vertical){
+    .blinky{
+        height: 150px;
+        width: 150px;
+        position: absolute;
+        left: calc(env(fold-left) - 150px);
+        top: 0;
+        text-align: center;
+
+    } 
+
+    .pinky{
+        height: 150px;
+        width: calc(100vw - env(fold-left) - env(fold-width));  
+        position: absolute;
+        left: calc(env(fold-left) + env(fold-width)); 
+        top: 0px;
+        text-align: center;
+    }
+
+    .inky{
+        height: 200px;
+        width: calc(env(fold-right) - env(fold-width));
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+    }
+
+    .clyde{
+        height: 200px;
+        width: calc(env(fold-right) / 2 );
+        position: absolute;
+        left: calc(env(fold-left) + env(fold-width)); 
+        bottom: 0;
+        text-align: center;
+    }
+}
+
+
+@media (screen-spanning: single-fold-horizontal){
+    .blinky{
+        height: 170px;
+        width: calc(env(fold-width) / 2 );
+        position: absolute;
+        top: env(fold-bottom);
+    }
+
+    .pinky{
+        height: 100px;
+        width: calc(env(fold-right) - 100px);
+        position: absolute;
+        left: 50px;
+        bottom: calc(env(fold-top) * 1.5);
+    }
+
+    .inky{
+        height: 100px;
+        width: calc(env(fold-width) / 2);
+        position: absolute;
+        right: calc(env(fold-width) - 100vw);
+        bottom: 0;
+        text-align: center;
+    }
+
+    .clyde{
+        height: 100px;
+        width: calc(env(fold-width) / 2);
+        position: absolute;
+        left: 0; 
+        bottom: 0;
+        text-align: center;
+    }
+
+}
