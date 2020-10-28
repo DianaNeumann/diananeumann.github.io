@@ -334,6 +334,33 @@ export class MainApplication extends LitElement {
       },{
         name: "images/23",
         alt: "ты еще тут? (-.-)"
+      },{
+        name: "images/24",
+        alt: ""
+      },{
+        name: "images/25",
+        alt: ""
+      },{
+        name: "images/25",
+        alt: ""
+      },{
+        name: "images/26",
+        alt: ""
+      },{
+        name: "images/27",
+        alt: ""
+      },{
+        name: "images/28",
+        alt: ""
+      },{
+        name: "images/29",
+        alt: ""
+      },{
+        name: "images/30",
+        alt: ""
+      },{
+        name: "images/31",
+        alt: ""
       }];
       return html`
         <mwc-drawer type="modal" hasHeader id="drawer">
