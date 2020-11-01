@@ -79,7 +79,7 @@ html,body{
 
 body{
     background-color: #000;
-    background-image: url('/img/noise.png');
+    background-image: url('https://diananeumann.github.io/me/img/noise.png');
 
     color: #00df00;
     font-family: 'VT323', 'Courier', monospace;
@@ -104,7 +104,7 @@ pre{
 
 .content{
   z-index: 100;
-  background-image: url('/img/line.png');
+  background-image: url('https://diananeumann.github.io/me/img/line.png');
   position: absolute;
   left: 0;
   top: 0;
