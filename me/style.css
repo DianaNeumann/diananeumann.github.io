@@ -79,7 +79,7 @@ html,body{
 
 body{
     background-color: #000;
-    background-image: url('https://diananeumann.github.io/me/img/noise.png');
+    background-image: url('/img/noise.png');
 
     color: #00df00;
     font-family: 'VT323', 'Courier', monospace;
@@ -104,7 +104,7 @@ pre{
 
 .content{
   z-index: 100;
-  background-image: url('https://diananeumann.github.io/me/img/line.png');
+  background-image: url('/img/line.png');
   position: absolute;
   left: 0;
   top: 0;
@@ -209,10 +209,13 @@ pre{
 ul, ol{
     list-style: none;
 }
+
 .we{
+    display: inline;
     width: 32px;
     height: 32px;
     margin-bottom: -7px;
+    margin-left: 10px;
     fill: #fff !important;
 }
 
@@ -221,3 +224,13 @@ ul, ol{
   background-color: var(--select-bg);
   color: #000;
 }
+
+#wireless{
+  width: 28px;
+  height: 28px;
+  fill: #00DF00;
+  margin-left: 3px;
+  margin-bottom: -8px;
+  
+}
+
