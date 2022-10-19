@@ -178,7 +178,7 @@ function initWorld() {
 
 
 function loadTexture() {
-    IMAGE_LOADER.load('./img/texture.jpg', (image) => {
+    IMAGE_LOADER.load('../img/texture.jpg', (image) => {
         TEXTURE.image = image;
         TEXTURE.needsUpdate = true;
     });
