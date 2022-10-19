@@ -168,7 +168,7 @@ function initWorld() {
         map: texture
     });
 
-    IMAGE_LOADER.load('./img/prakticki.jpg', (image) => {
+    IMAGE_LOADER.load('../img/prakticki.jpg', (image) => {
         texture.image = image;
         texture.needsUpdate = true;
     });
@@ -188,7 +188,7 @@ function loadTexture() {
 
 // Notion OOP
 function loadModel() {
-    OBJ_LOADER.load('./objects/NotionOBJ.obj', (object) => {
+    OBJ_LOADER.load('../objects/NotionOBJ.obj', (object) => {
         object.traverse(function(child) {
             if (child instanceof THREE.Mesh) {
                 child.castShadow = true;
@@ -216,7 +216,7 @@ function loadModel() {
 
 // undefined link-2
 function loadModel1() {
-    OBJ_LOADER.load('./objects/link1part.obj', (object) => {
+    OBJ_LOADER.load('../objects/link1part.obj', (object) => {
         object.traverse(function(child) {
             if (child instanceof THREE.Mesh) {
                 child.castShadow = true;
@@ -243,7 +243,7 @@ function loadModel1() {
 }
 // undefined link-2
 function loadModel2() {
-    OBJ_LOADER.load('./objects/link2part.obj', (object) => {
+    OBJ_LOADER.load('../objects/link2part.obj', (object) => {
         object.traverse(function(child) {
             if (child instanceof THREE.Mesh) {
                 child.castShadow = true;
@@ -268,7 +268,7 @@ function loadModel2() {
 }
 // memememem
 function loadModel3() {
-    OBJ_LOADER.load('./objects/AuthorOBJ.obj', (object) => {
+    OBJ_LOADER.load('../objects/AuthorOBJ.obj', (object) => {
         object.traverse(function(child) {
             if (child instanceof THREE.Mesh) {
                 child.castShadow = true;
