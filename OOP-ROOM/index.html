@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+    <script>
+        
+        var scrmsg = " Комната гигачада ";
+        var scrspacer = " ";
+        var scrpos = 0;
+
+        function ScrollMessage() {
+            window.status = scrmsg.substring(scrpos, scrmsg.length) + scrspacer +
+                scrmsg.substring(0, scrpos);
+
+            scrpos++;
+
+            if (scrpos > scrmsg.length){
+                scrpos = 0;
+            }
+                
+            window.setTimeout("ScrollMessage()", 150);
+        }
+        ScrollMessage();
+        var msg = " Комната гигачада";
+        var speed = 200;
+
+        function ScrollTitle() {
+            document.title = msg;
+            msg = msg.substring(1, msg.length) + msg.charAt(0);
+            setTimeout("ScrollTitle()", speed);
+        }
+        ScrollTitle();
+        
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .canvas-container {
+            height: 100%;
+            width: 100%;
+        }
+
+        .popup-3d {
+            color: #fff;
+            font-family: 'Pacifico', cursive;
+            font-size: 4rem;
+            pointer-events: none;
+        }
+    </style>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Pacifico'>
+    <style>
+        .spanstyle {
+            position: absolute;
+            visibility: visible;
+            top: -50px;
+            font-size: 10pt;
+            font-family: Verdana;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="main" onload="makesnake()" onMouseover="if(document.all&&window.parent.pull) window.parent.pull()" onMouseout="if(document.all&&window.parent.pull) window.parent.draw()" topmargin="5" leftmargin="5" marginwidth="5" marginheight="5" id="top">
+
+    <script type="text/javascript" src="./js/makesnake.js"></script>
+    <div class='canvas-container'></div>
+
+    <div class='popup-3d'>
+        <CENTER>
+    </div>
+
+    <script src='https://unpkg.com/three@0.99.0/build/three.min.js'></script>
+    <script src='https://unpkg.com/three@0.99.0/examples/js/loaders/OBJLoader.js'></script>
+    <script src='https://unpkg.com/three@0.99.0/examples/js/controls/OrbitControls.js'></script>
+    <script src='https://unpkg.com/three@0.99.0/examples/js/renderers/CSS3DRenderer.js'></script>
+    <script src='https://unpkg.com/animejs@2.2.0/anime.min.js'></script>
+    <script src='./js/main.js'></script>
+</body>
+</html>
