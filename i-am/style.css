@@ -119,6 +119,7 @@ pre{
 }
 
 .content{
+  width: 1300px;
   z-index: 100;
   background-image: url('https://diananeumann.github.io/i-am/img/line.png');
   position: absolute;
