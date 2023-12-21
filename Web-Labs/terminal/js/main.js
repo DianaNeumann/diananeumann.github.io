@@ -1,14 +1,16 @@
 var before = document.getElementById("before");
 var liner = document.getElementById("liner");
-var command = document.getElementById("typer");
-var textarea = document.getElementById("texter");
+var command = document.getElementById("typer"); 
+var textarea = document.getElementById("texter"); 
 var terminal = document.getElementById("terminal");
 
 var git = 0;
+var pw = false;
+let pwd = false;
 var commands = [];
 
 
-setTimeout(function () {
+setTimeout(function() {
   loopLines(banner, "", 80);
   textarea.focus();
 }, 100);
@@ -27,27 +29,50 @@ function enterKey(e) {
   if (e.keyCode == 181) {
     document.location.reload(true);
   }
-  if (e.keyCode == 13) {
-    commands.push(command.innerHTML);
-    git = commands.length;
-    addLine("dmitry.knyazkin@icloud.com:~$ " + command.innerHTML, "no-animation", 0);
-    commander(command.innerHTML.toLowerCase());
-    command.innerHTML = "";
-    textarea.value = "";
-  }
-  if (e.keyCode == 38 && git != 0) {
-    git -= 1;
-    textarea.value = commands[git];
-    command.innerHTML = textarea.value;
-  }
-  if (e.keyCode == 40 && git != commands.length) {
-    git += 1;
-    if (commands[git] === undefined) {
-      textarea.value = "";
-    } else {
-      textarea.value = commands[git];
+  if (pw) {
+    let et = "*";
+    let w = textarea.value.length;
+    command.innerHTML = et.repeat(w);
+    if (textarea.value === password) {
+      pwd = true;
     }
-    command.innerHTML = textarea.value;
+    if (pwd && e.keyCode == 13) {
+      loopLines(secret, "color2 margin", 120);
+      command.innerHTML = "";
+      textarea.value = "";
+      pwd = false;
+      pw = false;
+      liner.classList.remove("password");
+    } else if (e.keyCode == 13) {
+      addLine("Wrong password", "error", 0);
+      command.innerHTML = "";
+      textarea.value = "";
+      pw = false;
+      liner.classList.remove("password");
+    }
+  } else {
+    if (e.keyCode == 13) {
+      commands.push(command.innerHTML);
+      git = commands.length;
+      addLine("dmitry.knyazkin@icloud.com:~$ " + command.innerHTML, "no-animation", 0);
+      commander(command.innerHTML.toLowerCase());
+      command.innerHTML = "";
+      textarea.value = "";
+    }
+    if (e.keyCode == 38 && git != 0) {
+      git -= 1;
+      textarea.value = commands[git];
+      command.innerHTML = textarea.value;
+    }
+    if (e.keyCode == 40 && git != commands.length) {
+      git += 1;
+      if (commands[git] === undefined) {
+        textarea.value = "";
+      } else {
+        textarea.value = commands[git];
+      }
+      command.innerHTML = textarea.value;
+    }
   }
 }
 
@@ -69,9 +94,9 @@ async function commander(cmd) {
       break;
     case "sudo":
       addLine("Вы че шутите, это слишком простой эмулятор для таких вещей", "color2", 80);
-      setTimeout(function () {
+      setTimeout(function() {
         window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-      }, 1000);
+      }, 1000); 
       break;
     case "history":
       addLine("<br>", "", 0);
@@ -79,7 +104,7 @@ async function commander(cmd) {
       addLine("<br>", "command", 80 * commands.length + 50);
       break;
     case "clear":
-      setTimeout(function () {
+      setTimeout(function() {
         terminal.innerHTML = '<a id="before"></a>';
         before = document.getElementById("before");
       }, 1);
@@ -98,7 +123,7 @@ async function commander(cmd) {
 }
 
 function newTab(link) {
-  setTimeout(function () {
+  setTimeout(function() {
     window.open(link, "_blank");
   }, 500);
 }
@@ -113,7 +138,7 @@ function addLine(text, style, time) {
       t += text.charAt(i);
     }
   }
-  setTimeout(function () {
+  setTimeout(function() {
     var next = document.createElement("p");
     next.innerHTML = t;
     next.className = style;
@@ -125,7 +150,7 @@ function addLine(text, style, time) {
 }
 
 function loopLines(name, style, time) {
-  name.forEach(function (item, index) {
+  name.forEach(function(item, index) {
     addLine(item, style, index * time);
   });
 }
@@ -133,30 +158,30 @@ function loopLines(name, style, time) {
 
 async function fetchComments() {
   try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/comments');
-    if (!response.ok) {
-      return 'Network response was not ok ' + response.statusText;
-    }
-    else {
-      const data = await response.json();
-      const randomComments = [];
-      const usedIndexes = new Set();
-      while (randomComments.length < 10) {
-        const randomIndex = Math.floor(Math.random() * 500);
-        if (!usedIndexes.has(randomIndex)) {
-          randomComments.push(data[randomIndex]);
-          usedIndexes.add(randomIndex);
-        }
+      const response = await fetch('https://jsonplaceholder.typicode.com/comments');
+      if (!response.ok) {
+          return 'Network response was not ok ' + response.statusText;
       }
-
-      const stringifiedComments = randomComments.map(comment => {
-        return `ID: ${comment.id}, Name: ${comment.name}, Email: ${comment.email}, Body: ${comment.body}`;
-      });
-
-      return stringifiedComments;
-    }
-
+      else{
+        const data = await response.json();
+        const randomComments = [];
+        const usedIndexes = new Set();
+        while (randomComments.length < 10) {
+          const randomIndex = Math.floor(Math.random() * 500);
+          if (!usedIndexes.has(randomIndex)) {
+            randomComments.push(data[randomIndex]);
+            usedIndexes.add(randomIndex);
+          }
+        }
+  
+        const stringifiedComments = randomComments.map(comment => {
+            return `ID: ${comment.id}, Name: ${comment.name}, Email: ${comment.email}, Body: ${comment.body}`;
+        });
+  
+        return stringifiedComments;
+      }
+      
   } catch (error) {
-    return 'There has been a problem with your fetch operation:' + error;
+      return 'There has been a problem with your fetch operation:' +  error;
   }
 }

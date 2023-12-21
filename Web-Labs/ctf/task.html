@@ -38,7 +38,7 @@
                 <p><a class="ads" href="#">Советсткое средтво от...</a></p>
                 <p><a class="ads" href="#">Советсткое средтво от...</a></p>
                 <p><a class="ads" href="#">Советсткое средтво от...</a></p>
-                <p><a class="ads"href="#">Советсткое средтво от...</a></p>
+                <p><a class="ads" href="#">Советсткое средтво от...</a></p>
             </div>
             <div id="like" class="side_menu">
                 <div id="like_header" class="side_header">:[ Load speed ]:</div>
@@ -46,14 +46,15 @@
                     <p class="performance"></p>
                 </div>
             </div>
-            
+
         </aside>
         <div id="main">
             <div id="content">
                 <div id="content_header" class="side_header">&nbsp;</div>
                 <div id="challengeInner">
                     <h1 id="challengeTitle">Challenge</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci et possimus harum fugiat quae ab vel ut atque dolorem ea deserunt, repellat modi? Minus quas saepe sunt, quia error culpa!</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci et possimus harum fugiat quae
+                        ab vel ut atque dolorem ea deserunt, repellat modi? Minus quas saepe sunt, quia error culpa!</p>
                     <form class="form" method="post">
                         <label for="challengePass">Password:</label>
                         <input type="password" name="challengePass" value="" />
@@ -67,7 +68,7 @@
             </div>
             <footer class="bottom">
 
-        
+
                 <div class="links panel">
                     <p><a href="../index.html" title="Home">Desktop</a> |
                         <a href="challenge.html" title="Challenges">Challenges</a> |
@@ -86,14 +87,7 @@
         <aside class="right">
             <div id="shoutbox" class="side_menu">
                 <div id="shoutbox_header" class="side_header">:[ Chat ]:</div>
-
-                <p class="user"><a href="/user/profile/myay33" class="username">
-                        <strong>User</strong></a></p>
-                <form action="/shout/post" method="post">
-                    <textarea name="message" rows="5" cols="16"></textarea><br />
-                    <input type="submit" name="shoutssub" value="Shout!" class="btn" />
-                </form><br />
-
+                <p>In problem solving mode chat is unavailable :)</p>
                 <div id="shouts">
                     <ul>
                         <li><a href="#">lololoshka1233</a>:
@@ -109,11 +103,11 @@
                             <br /><span class="message">test123</span>
                         </li>
                     </ul>
-
                 </div>
+
             </div>
-        </aside> 
-    </div> 
+        </aside>
+    </div>
 
     <script>
         function getUrlParameter(name) {
@@ -122,9 +116,9 @@
             var results = regex.exec(location.search);
             return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
         }
-    
+
         var challengeNumber = getUrlParameter('challenge');
-    
+
         if (challengeNumber) {
             var challengeTitle = document.getElementById('challengeTitle');
             challengeTitle.textContent = 'Challenge ' + challengeNumber;
