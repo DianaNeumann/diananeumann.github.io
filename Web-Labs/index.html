@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>diana</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/performanse.js"></script>
+</head>
+
+<body>
+
+    <div class="icon"><a href="#" onclick="openTab('maket-content')">
+            <img src="img/icons/lab1.png"><br />
+            <span>Макет</span>
+        </a>
+    </div>
+
+    <div class="icon">
+        <a href="#" onclick="openTab('terminal')">
+            <img src="img/icons/cmd.png"><br />
+            <span>Terminal</span>
+        </a>
+    </div>
+
+    <div class="icon" style="margin-left: 10px">
+        <a href="#" onclick="openTab('meee')">
+            <img class="icon-image" src="img/icons/wcvector.png"><br />
+            <span>MEEEE</span>
+        </a>
+    </div>
+    <div class="icon" style="margin-left: 10px"><a href="#" onclick="openTab('ctf')">
+            <img class="icon-image pixelated-image" src="img/icons/ctf.png"><br />
+            <span>CTF</span>
+        </a>
+    </div>
+    <div class="icon" style="margin-left: 10px"><a href="ctf/index.html">
+        <img class="icon-image pixelated-image" src="img/icons/ctf.png"><br />
+        <span>CTF-link (recommended)</span>
+    </a>
+</div>
+
+
+    <div class="start" id="start">
+        <div id="ia" class="window" style="width: 515px">
+            <div id="custom" class="title-bar custom">
+                <div class="title-bar-text">
+                    <img src="img/icons/start.png" width="12px">&nbsp;&nbsp;
+                    <b>Начало</b>
+                </div>
+                <div class="title-bar-controls inactive-btn">
+                    <button class="inactivebtn" disabled aria-label="Minimize"></button>
+                    <button class="inactivebtn" disabled aria-label="Maximize"></button>
+                    <button class="inactive-title" onclick="closeTab('start')" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="field-row"></div>
+                <div class="field-row"></div>
+                <div class="field-row"></div>
+                <p class="intro-text">
+                    Я долгое время занимался информацонной безопастностью, поэтому решил сделать сайт для решения
+                    CTF-задачек.
+                    <br /> Сайт сделан в виде олдового рабочего стола, по приколу чисто, с помощью <a
+                        href="https://github.com/jdan/98.css">этой библиотеки</a>
+                </p>
+
+                <div class="field-row"><button style="width: 496px;" class="kgBtn" id="kgBtn"
+                        onclick="changeIntroColor()">PRESSSS !</button></div>
+                <div class="field-row"></div>
+            </div>
+            <div class="status-bar">
+                <p class="status-bar-field">Press ALT + F4 for help</p>
+                <p class="status-bar-field performance"></p>
+                <p class="status-bar-field">CPU Usage: <b id="cpu">14%</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="maket-content" id="maket-content" style="display: none;">
+        <div id="ia" class="window">
+            <div class="title-bar custom">
+                <div class="title-bar-text">
+                    <img src="img/icons/start.png" width="12px">&nbsp;&nbsp; Лаба 1
+                </div>
+                <div class="title-bar-controls inactive-btn">
+                    <button class="inactivebtn" disabled aria-label="Minimize"></button>
+                    <button class="inactivebtn" disabled aria-label="Maximize"></button>
+                    <button class="inactive-title" onclick="closeTab('maket-content')" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="field-row"></div>
+                <div class="maket">
+                    <img src="img/maket4.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="meee" id="meee" style="display: none;">
+        <div id="ia" class="window" style="width: 1000px">
+            <div class="title-bar">
+                <div class="title-bar-text">MEEEEE</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button onclick="closeTab('meee')" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <iframe src="https://diananeumann.github.io/i-am/" width="980px" height="700"
+                    style="border:1px solid black;"></iframe>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="ctf" id="ctf" style="display: none;">
+        <div id="ia" class="window" style="width: 1087px">
+            <div class="title-bar ctf-bar">
+                <div class="title-bar-text">CTF</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button onclick="closeTab('ctf')" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <iframe src="ctf/index.html" width="1080px" height="500" style="border:1px solid black;"></iframe>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="terminal" id="terminal" style="display: none;">
+        <div id="ia" class="window" style="width: 1000px">
+            <div class="title-bar">
+                <div class="title-bar-text">Terminal (Lab-6)</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button onclick="closeTab('terminal')" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <iframe src="terminal/terminal.html" width="980px" height="600"
+                    style="border:1px solid black;"></iframe>
+
+            </div>
+        </div>
+    </div>
+    <div id="toolbar">
+        <div class="toolbar-start-menu">
+            <button class="start-button">
+                Start
+            </button>
+        </div>
+        <div class="toolbar-separator"></div>
+
+        <div class="toolbar-left">
+            <button id="startTab" onclick="openTab('main')" class="toolbar-icon KG inactivebtn"><img
+                    src="img/icons/start_compact.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                    class="title-KG">Начало</span></button>
+            <button disabled id="meeeTab" class="toolbar-icon KG-2 inactivebtn" style="display: none;"><img
+                    src="img/icons/start_compact.png">&nbsp;&nbsp;<span class="title-KG">Meeeeee</span></button>
+            <button disabled id="terminalTab" class="toolbar-icon KG-2 inactivebtn" style="display: none;"><img
+                    src="img/icons/start_compact.png">&nbsp;&nbsp;<span class="title-KG">Terminal</span></button>
+            <button disabled id="ctfTab" class="toolbar-icon KG-2 inactivebtn" style="display: none;"><img
+                    src="img/icons/start_compact.png">&nbsp;&nbsp;<span class="title-KG">Ctf</span></button>
+            <button disabled id="maket-contentTab" class="toolbar-icon KG-2 inactivebtn" style="display: none;"><img
+                    src="img/icons/start_compact.png">&nbsp;&nbsp;<span class="title-KG">Макеееееет</span></button>
+        </div>
+
+        <div class="toolbar-right">
+            <div class="time">
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="mobile_nope-exe">
+        <div class="mobile-msg">
+            <h1>WARNING</h1>
+            <p>mobile phone detected!!!!!</p>
+            <p>go away!!</p>
+            <p><i>- dmitry.knyazkin</i></p>
+            <br />
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script>
+        (function () {
+            window.addEventListener('load', function () {
+                var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+                var pElement = document.querySelector('p.performance');
+                if (pElement) {
+                    pElement.textContent = 'Page load time: ' + loadTime + ' milliseconds';
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
