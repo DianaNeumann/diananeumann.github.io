@@ -9,6 +9,7 @@ whoami = [
 
 help = [
   "<br>",
+  '<span class="command">comments</span>            Get random comments from mock api (lab-6)',
   '<span class="command">whoami</span>              About me',
   '<span class="command">bitcoin_password</span>    Secrets password',
   '<span class="command">test</span>                TestTestTest',
